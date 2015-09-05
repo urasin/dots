@@ -12,9 +12,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
  
 " 今後このあたりに追加のプラグインをどんどん書いて行きます！！"
 NeoBundle 'w0ng/vim-hybrid'
-
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'airblade/vim-gitgutter'
 call neobundle#end()
- 
+
 " Required:
 filetype plugin indent on
  
@@ -33,7 +35,8 @@ set relativenumber
 set tabstop=4
 set expandtab
 
-"" ESC response
+"set tabstop=4
+" ESC response
 set timeoutlen=50
 
 "" 不可視文字
