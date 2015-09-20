@@ -36,7 +36,7 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle "tyru/caw.vim.git"  " コメントアウト
 NeoBundle 'tpope/vim-endwise'  " end自動挿入
 NeoBundle 'vim-scripts/MultipleSearch'  " 検索業ハイライト
-NeoBundle 'Townk/vim-autoclose'  " 閉じかっこ入力
+NeoBundle 'kana/vim-smartinput'  " 閉じかっこ入力
 call neobundle#end()
 
 " Required:
@@ -87,7 +87,7 @@ colorscheme hybrid
 " 保存時に行末の空白を除去する
 autocmd BufWritePre * :%s/\s\+$//ge
 
-syntax on
+"syntax on
 
 " カーソルラインを強調
 set cursorline
@@ -135,12 +135,13 @@ let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
 set splitright "新しいウィンドウを右に開く
 
 "" ---------- Unite 関連
+" エラーがでるのを防止
+set hidden
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
 
 nnoremap [unite]    <Nop>
 nmap     <Space> [unite]
-
 " スペースキーとbキーでバッファを表示
 nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
 
@@ -159,7 +160,7 @@ if executable('ag')
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
 endif
-
+set shortmess+=A
 " 高速化 https://github.com/Shougo/unite.vim/issues/326
 call unite#custom#source('file_rec/async', 'ignore_pattern', '\(png\|gif\|jpeg\|jpg\)$')
 let g:unite_source_rec_max_cache_files = 5000
