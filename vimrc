@@ -172,3 +172,7 @@ python del powerline_setup
 set laststatus=2
 set showtabline=2
 set noshowmode
+
+" change cursor in Insert mode and tmux
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
